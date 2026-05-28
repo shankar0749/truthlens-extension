@@ -1,0 +1,49 @@
+.truthlens-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 999999;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    transition: background-color 0.3s ease;
+}
+
+.truthlens-badge[data-state="analyzing"] {
+    background-color: #6366f1;
+    animation: tl-pulse 1.4s infinite;
+}
+
+.truthlens-badge[data-state="real"] {
+    background-color: #10b981;
+}
+
+.truthlens-badge[data-state="ai"] {
+    background-color: #dc2626;
+}
+
+.truthlens-badge[data-state="mixed"] {
+    background-color: #f59e0b;
+}
+
+.truthlens-badge[data-state="error"] {
+    background-color: #7f1d1d;
+}
+
+@keyframes tl-pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.55;
+    }
+}
